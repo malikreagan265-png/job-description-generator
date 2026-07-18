@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Job Description Generator — AI-Powered JD Writer, Persona Builder & JD Scorer</title>
+  <meta name="description" content="Write job descriptions that attract the right candidates in minutes. AI JD generator, candidate persona builder, and JD scorer. Stop hiring the wrong people with the wrong words." />
+  <meta name="keywords" content="job description generator, job description template, how to write a job description, AI job description writer, candidate persona, job posting template, HR tools, recruitment tools" />
+  <link rel="canonical" href="https://malikreagan.gumroad.com/l/job-description-generator" />
+
+  <!-- OG -->
+  <meta property="og:title" content="Job Description Generator — Write JDs That Attract the Right Candidates" />
+  <meta property="og:description" content="AI JD generator, candidate persona builder, and JD scorer. Three tools for better hiring. $47 one-time." />
+  <meta property="og:type" content="website" />
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Job Description Generator",
+    "applicationCategory": "BusinessApplication",
+    "description": "AI-powered job description generator with candidate persona builder and JD scorer for HR managers and hiring teams.",
+    "offers": { "@type": "Offer", "price": "47.00", "priceCurrency": "USD" },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "41" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do you write a good job description?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A good job description should be written around the candidate, not just the role. It should clearly explain why the role exists (not just what it does), describe what success looks like in the first 90 days, separate must-have from nice-to-have requirements, convey what it's genuinely like to work at the company, and help candidates self-select in or out accurately. The Job Description Generator produces JDs structured around all of these principles, with tone and content tailored to the specific role and candidate profile."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should a job description include?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A complete job description should include: a compelling role title and one-sentence tagline, a company overview that conveys culture (not just facts), a clear explanation of why the role exists and what the first 90 days look like, 6-8 specific responsibilities using action verbs, must-have and nice-to-have requirements listed separately, a genuine benefits and perks section, location and work model information, salary range (increasingly expected by candidates), a diversity and inclusion statement, and clear application instructions with timeline."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long should a job description be?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Research consistently shows that job descriptions between 700 and 2,000 words receive the most applications. Below 300 words signals insufficient detail and attracts unqualified applicants. Above 2,000 words causes drop-off, particularly on mobile. The sweet spot is 800-1,200 words — long enough to set clear expectations and filter appropriately, short enough to hold attention. The Job Description Generator produces JDs in this range by default."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What makes candidates stop reading a job description?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The most common reasons candidates abandon a job description mid-read: an unclear or inflated list of requirements (10+ bullet points signals a poorly defined role), generic company descriptions ('we are a dynamic, innovative team'), vague responsibilities that don't explain what the person will actually own, missing salary information (increasingly a dealbreaker for senior candidates), exclusionary language that signals cultural fit issues, and no sense of what success looks like in the role. The JD Scorer identifies which of these problems your existing JDs have."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --slate: #1C2333;
+      --slate2: #242D40;
+      --coral: #D45C3A;
+      --coral2: #E06840;
+      --coral-dim: #D45C3A14;
+      --coral-soft: #D45C3A28;
+      --sand: #FAF8F4;
+      --sand2: #F3F0EA;
+      --sand3: #EAE6DC;
+      --rule: #E0DCD4;
+      --rule2: #EAE7E0;
+      --ink: #1C2020;
+      --ink2: #3C4040;
+      --ink3: #6C7070;
+      --ink4: #9CA0A0;
+      --green: #1A6B3C;
+      --green-dim: #1A6B3C14;
+      --white: #FFFFFF;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--sand);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px; line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container { max-width: 880px; margin: 0 auto; padding: 0 36px; }
+
+    /* NAV */
+    nav {
+      background: var(--white);
+      border-bottom: 2px solid var(--coral);
+      padding: 0 36px; height: 56px;
+      display: flex; justify-content: space-between; align-items: center;
+      position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 1px 0 var(--rule);
+    }
+    .nav-logo {
+      font-family: 'Lora', serif;
+      font-size: 16px; font-weight: 600; color: var(--slate);
+      text-decoration: none;
+    }
+    .nav-logo em { font-style: italic; color: var(--coral); }
+    .nav-cta {
+      background: var(--slate); color: var(--white);
+      font-family: 'DM Mono', monospace;
+      font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+      padding: 9px 20px; text-decoration: none;
+      font-weight: 500; transition: all 0.15s;
+    }
+    .nav-cta:hover { background: var(--slate2); transform: translateY(-1px); }
+
+    /* HERO */
+    .hero {
+      background: var(--slate);
+      padding: 88px 0 72px;
+      border-bottom: 3px solid var(--coral);
+      position: relative; overflow: hidden;
+    }
+    .hero-texture {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 50% 70% at 0% 50%, rgba(212,92,58,0.08) 0%, transparent 60%),
+                  radial-gradient(ellipse 40% 50% at 100% 20%, rgba(26,35,51,0.5) 0%, transparent 60%);
+    }
+    .hero-inner { position: relative; }
+    .hero-kicker {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px; letter-spacing: 5px; text-transform: uppercase;
+      color: var(--ink4); margin-bottom: 20px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .hero-kicker::before { content: '✦'; color: var(--coral); font-size: 12px; }
+    .hero-h1 {
+      font-family: 'Lora', serif;
+      font-size: clamp(38px, 5.5vw, 72px);
+      font-weight: 700; line-height: 1.05;
+      color: var(--white); margin-bottom: 24px; letter-spacing: -0.5px;
+    }
+    .hero-h1 em { font-style: italic; font-weight: 400; color: var(--coral); display: block; }
+    .hero-sub {
+      font-size: 16px; color: var(--ink4);
+      max-width: 540px; line-height: 1.8;
+      margin-bottom: 40px; font-weight: 300;
+    }
+    .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-bottom: 52px; }
+    .btn-primary {
+      background: var(--coral); color: var(--white);
+      font-family: 'DM Mono', monospace;
+      font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+      padding: 16px 40px; text-decoration: none;
+      font-weight: 500; transition: all 0.2s; display: inline-block;
+    }
+    .btn-primary:hover { background: var(--coral2); transform: translateY(-2px); box-shadow: 0 10px 40px rgba(212,92,58,0.3); }
+    .btn-ghost {
+      color: var(--ink4); font-family: 'DM Mono', monospace;
+      font-size: 10px; letter-spacing: 2px; text-decoration: none;
+      border-bottom: 1px solid rgba(156,160,160,0.3); padding-bottom: 2px;
+      text-transform: uppercase; transition: all 0.15s;
+    }
+    .btn-ghost:hover { color: var(--white); }
+
+    /* JD preview */
+    .jd-preview {
+      max-width: 560px; background: var(--white);
+      border: 1px solid var(--rule); overflow: hidden;
+    }
+    .jdp-head {
+      background: var(--sand2); padding: 14px 18px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .jdp-tag { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 3px; text-transform: uppercase; color: var(--coral); margin-bottom: 4px; }
+    .jdp-title { font-family: 'Lora', serif; font-size: 20px; font-weight: 700; color: var(--slate); }
+    .jdp-meta { display: flex; gap: 16px; padding: 10px 18px; border-bottom: 1px solid var(--rule); flex-wrap: wrap; }
+    .jdp-meta-item { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--ink4); }
+    .jdp-body { padding: 14px 18px; }
+    .jdp-section { margin-bottom: 12px; }
+    .jdp-section-label { font-family: 'DM Mono', monospace; font-size: 7px; letter-spacing: 3px; text-transform: uppercase; color: var(--coral); margin-bottom: 6px; }
+    .jdp-line { height: 8px; background: var(--rule2); border-radius: 1px; margin-bottom: 5px; }
+
+    /* SECTIONS */
+    .section { padding: 88px 0; border-top: 1px solid var(--rule); }
+    .eyebrow { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 5px; text-transform: uppercase; color: var(--coral); margin-bottom: 16px; }
+    .section-title { font-family: 'Lora', serif; font-size: clamp(30px, 4.5vw, 52px); font-weight: 700; line-height: 1.05; margin-bottom: 14px; letter-spacing: -0.3px; }
+    .section-title em { font-style: italic; font-weight: 400; color: var(--coral); }
+    .section-sub { font-size: 15px; color: var(--ink3); max-width: 540px; line-height: 1.8; font-weight: 300; margin-bottom: 52px; }
+
+    /* PROBLEM */
+    .problem-split { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 48px; }
+    @media(max-width:640px){ .problem-split { grid-template-columns: 1fr; } }
+    .ps-col { border: 1px solid var(--rule); overflow: hidden; }
+    .ps-head { padding: 14px 18px; border-bottom: 1px solid var(--rule); }
+    .ps-head-label { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px; }
+    .ps-head-title { font-family: 'Lora', serif; font-size: 17px; font-weight: 700; }
+    .ps-body { padding: 16px 18px; background: var(--white); }
+    .ps-item { display: flex; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--rule2); font-size: 13px; line-height: 1.5; }
+    .ps-item:last-child { border-bottom: none; }
+    .ps-icon { flex-shrink: 0; font-size: 14px; }
+    .role-centric .ps-head { background: var(--sand2); }
+    .role-centric .ps-head-label { color: var(--ink3); }
+    .role-centric .ps-head-title { color: var(--ink); }
+    .role-centric .ps-item { color: var(--ink3); }
+    .candidate-centric .ps-head { background: var(--coral-dim); }
+    .candidate-centric .ps-head-label { color: var(--coral); }
+    .candidate-centric .ps-head-title { color: var(--slate); }
+    .candidate-centric .ps-item { color: var(--ink2); }
+
+    /* TOOLS */
+    .tool-list { display: flex; flex-direction: column; gap: 2px; margin-top: 48px; }
+    .tool-row { display: grid; grid-template-columns: 56px 1fr; background: var(--white); border: 1px solid var(--rule); }
+    .tool-num { display: flex; align-items: center; justify-content: center; background: var(--sand2); color: var(--coral); font-family: 'Lora', serif; font-size: 22px; font-style: italic; font-weight: 700; border-right: 1px solid var(--rule); }
+    .tool-body { padding: 22px 26px; }
+    .tool-tag { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 3px; text-transform: uppercase; color: var(--coral); margin-bottom: 8px; }
+    .tool-name { font-family: 'Lora', serif; font-size: 20px; font-weight: 700; color: var(--slate); margin-bottom: 8px; }
+    .tool-desc { font-size: 13px; color: var(--ink3); line-height: 1.7; margin-bottom: 12px; font-weight: 300; }
+    .tool-chips { display: flex; gap: 8px; flex-wrap: wrap; }
+    .tool-chip { font-family: 'DM Mono', monospace; font-size: 9px; padding: 3px 10px; border: 1px solid var(--rule); color: var(--ink4); text-transform: uppercase; letter-spacing: 1px; }
+
+    /* SCORER PREVIEW */
+    .score-preview { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; margin-top: 48px; }
+    .score-dim { background: var(--white); border: 1px solid var(--rule); padding: 16px 18px; }
+    .sd-name { font-weight: 600; color: var(--slate); font-size: 13px; margin-bottom: 6px; }
+    .sd-bar { height: 4px; background: var(--rule); border-radius: 2px; overflow: hidden; margin-bottom: 6px; }
+    .sd-bar-fill { height: 100%; border-radius: 2px; }
+    .sd-desc { font-size: 11px; color: var(--ink3); line-height: 1.5; font-weight: 300; }
+
+    /* TESTIMONIALS */
+    .test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; margin-top: 48px; }
+    .test-card { background: var(--white); border: 1px solid var(--rule); padding: 26px; border-top: 3px solid var(--coral); }
+    .stars { color: var(--coral); font-size: 12px; letter-spacing: 3px; margin-bottom: 12px; }
+    .test-card p { font-family: 'Lora', serif; font-size: 14px; font-style: italic; color: var(--ink2); line-height: 1.8; margin-bottom: 14px; }
+    .test-attr { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; color: var(--ink4); text-transform: uppercase; }
+
+    /* PRICING */
+    .pricing-card { max-width: 520px; margin: 48px auto 0; background: var(--white); border: 2px solid var(--slate); overflow: hidden; }
+    .pricing-top { background: var(--slate); padding: 40px 44px; text-align: center; }
+    .pricing-kicker { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: var(--ink4); margin-bottom: 14px; }
+    .price { font-family: 'Lora', serif; font-size: 80px; font-weight: 700; color: var(--white); line-height: 1; letter-spacing: -2px; }
+    .price-sub { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--ink4); margin-top: 6px; }
+    .pricing-body { padding: 36px 44px; }
+    .feature-list { list-style: none; margin-bottom: 32px; }
+    .feature-list li { display: flex; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--rule); font-size: 13px; color: var(--ink2); line-height: 1.5; }
+    .feature-list li:last-child { border-bottom: none; }
+    .check { color: var(--coral); flex-shrink: 0; padding-top: 2px; }
+    .btn-purchase { display: block; width: 100%; background: var(--coral); color: var(--white); font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; padding: 18px; text-align: center; text-decoration: none; font-weight: 500; transition: all 0.15s; }
+    .btn-purchase:hover { background: var(--coral2); transform: translateY(-1px); }
+    .guarantee { text-align: center; margin-top: 14px; font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1px; color: var(--ink4); text-transform: uppercase; }
+
+    /* FAQ */
+    .faq-list { margin-top: 48px; border: 1px solid var(--rule); background: var(--white); }
+    .faq-item { border-bottom: 1px solid var(--rule); }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; padding: 22px 28px; cursor: pointer; font-family: 'Lora', serif; font-size: 18px; font-weight: 700; color: var(--slate); line-height: 1.3; background: none; border: none; width: 100%; text-align: left; transition: background 0.15s; }
+    .faq-q:hover { background: var(--sand2); }
+    .faq-toggle { color: var(--coral); font-size: 22px; font-weight: 300; line-height: 1; flex-shrink: 0; font-family: sans-serif; }
+    .faq-a { display: none; padding: 0 28px 22px; font-size: 14px; color: var(--ink3); line-height: 1.8; font-weight: 300; }
+
+    /* CTA */
+    .cta-section { background: var(--slate); padding: 96px 0; border-top: 3px solid var(--coral); text-align: center; }
+    .cta-section h2 { font-family: 'Lora', serif; font-size: clamp(30px, 5vw, 58px); font-weight: 700; color: var(--white); line-height: 1.05; margin-bottom: 16px; }
+    .cta-section h2 em { font-style: italic; font-weight: 400; color: var(--coral); }
+    .cta-section p { font-size: 15px; color: var(--ink4); margin-bottom: 36px; max-width: 440px; margin-left: auto; margin-right: auto; line-height: 1.8; font-weight: 300; }
+    .cta-note { margin-top: 16px; font-family: 'DM Mono', monospace; font-size: 9px; color: var(--ink4); letter-spacing: 2px; text-transform: uppercase; }
+
+    /* FOOTER */
+    footer { padding: 28px 36px; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; background: var(--sand2); }
+    .footer-logo { font-family: 'Lora', serif; font-size: 14px; font-weight: 600; color: var(--ink3); }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--ink4); text-decoration: none; letter-spacing: 1px; text-transform: uppercase; }
+    .footer-links a:hover { color: var(--ink); }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+    .hero-inner > * { animation: fadeUp 0.45s ease both; opacity: 0; }
+    .hero-kicker   { animation-delay: 0.05s; }
+    .hero-h1       { animation-delay: 0.1s; }
+    .hero-sub      { animation-delay: 0.18s; }
+    .hero-actions  { animation-delay: 0.24s; }
+    .jd-preview    { animation-delay: 0.3s; }
+
+    @media (max-width: 600px) {
+      .container { padding: 0 20px; }
+      .section { padding: 60px 0; }
+      nav { padding: 0 20px; }
+      .pricing-top, .pricing-body { padding: 28px 24px; }
+      footer { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Job Description <em>Generator</em></a>
+  <a href="https://malikreagan.gumroad.com/l/job-description-generator" class="nav-cta">Get It — $47</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-texture"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-kicker">HR Intelligence Suite · Job Description Tools</div>
+      <h1 class="hero-h1">
+        Write JDs that attract
+        <em>the right candidates.</em>
+      </h1>
+      <p class="hero-sub">
+        AI job description generator, candidate persona builder, and JD scorer. Stop spending hours on JDs that attract the wrong people — or nobody at all.
+      </p>
+      <div class="hero-actions">
+        <a href="https://malikreagan.gumroad.com/l/job-description-generator" class="btn-primary">Get the JD Generator — $47</a>
+        <a href="#tools" class="btn-ghost">See all three tools ↓</a>
+      </div>
+      <div class="jd-preview">
+        <div class="jdp-head">
+          <div class="jdp-tag">Vertex Technologies · Product</div>
+          <div class="jdp-title">Senior Product Manager</div>
+        </div>
+        <div class="jdp-meta">
+          <div class="jdp-meta-item">Remote · UK</div>
+          <div class="jdp-meta-item">Senior level</div>
+          <div class="jdp-meta-item">£75,000–£90,000</div>
+          <div class="jdp-meta-item">Reports to CPO</div>
+        </div>
+        <div class="jdp-body">
+          <div class="jdp-section">
+            <div class="jdp-section-label">The Role</div>
+            <div class="jdp-line" style="width:95%"></div>
+            <div class="jdp-line" style="width:82%"></div>
+            <div class="jdp-line" style="width:88%"></div>
+          </div>
+          <div class="jdp-section">
+            <div class="jdp-section-label">What You'll Do</div>
+            <div class="jdp-line" style="width:78%"></div>
+            <div class="jdp-line" style="width:85%"></div>
+            <div class="jdp-line" style="width:70%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">The core problem</p>
+    <h2 class="section-title">Most JDs are written around<br/><em>the role, not the candidate.</em></h2>
+    <p class="section-sub">The difference between a JD that attracts 80 misaligned applications and one that attracts 12 great ones is how it's written — not where it's posted.</p>
+    <div class="problem-split">
+      <div class="ps-col role-centric">
+        <div class="ps-head">
+          <div class="ps-head-label" style="color:var(--ink3)">Role-centric JD</div>
+          <div class="ps-head-title">What most JDs look like</div>
+        </div>
+        <div class="ps-body">
+          <div class="ps-item"><div class="ps-icon">✗</div><div>Lists tasks and responsibilities as bullet points</div></div>
+          <div class="ps-item"><div class="ps-icon">✗</div><div>Generic company description — "dynamic, innovative team"</div></div>
+          <div class="ps-item"><div class="ps-icon">✗</div><div>12-item requirements list with no distinction between essential and nice-to-have</div></div>
+          <div class="ps-item"><div class="ps-icon">✗</div><div>No explanation of why the role exists or what success looks like</div></div>
+          <div class="ps-item"><div class="ps-icon">✗</div><div>Attracts everyone — filters nobody</div></div>
+        </div>
+      </div>
+      <div class="ps-col candidate-centric">
+        <div class="ps-head">
+          <div class="ps-head-label">Candidate-centric JD</div>
+          <div class="ps-head-title">What this tool produces</div>
+        </div>
+        <div class="ps-body">
+          <div class="ps-item"><div class="ps-icon">✓</div><div>Speaks to the candidate's motivations and current frustrations</div></div>
+          <div class="ps-item"><div class="ps-icon">✓</div><div>Specific, genuine culture description that conveys what it's really like</div></div>
+          <div class="ps-item"><div class="ps-icon">✓</div><div>Must-haves and nice-to-haves clearly separated — no requirement inflation</div></div>
+          <div class="ps-item"><div class="ps-icon">✓</div><div>90-day outcomes defined — candidates know exactly what success looks like</div></div>
+          <div class="ps-item"><div class="ps-icon">✓</div><div>Helps the right candidates apply — and the wrong ones self-select out</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section class="section" id="tools">
+  <div class="container">
+    <p class="eyebrow">What's inside</p>
+    <h2 class="section-title">Three tools.<br/><em>Better hiring starts here.</em></h2>
+    <p class="section-sub">Build the candidate profile, write the JD, then score it. The complete JD workflow in one tool.</p>
+    <div class="tool-list">
+      <div class="tool-row">
+        <div class="tool-num">I</div>
+        <div class="tool-body">
+          <div class="tool-tag">AI Writing</div>
+          <div class="tool-name">Job Description Generator</div>
+          <div class="tool-desc">Configure your role fully — title, company, type, location, seniority, salary, role purpose, 90-day outcomes, must-have and nice-to-have skills, culture, tone, and DEI preference. Claude writes a complete ATS-ready job description in under 60 seconds. Every section specific to your role — no generic filler.</div>
+          <div class="tool-chips">
+            <span class="tool-chip">5 tone options</span>
+            <span class="tool-chip">90-day outcomes</span>
+            <span class="tool-chip">DEI toggle</span>
+            <span class="tool-chip">ATS-ready</span>
+            <span class="tool-chip">PDF export</span>
+          </div>
+        </div>
+      </div>
+      <div class="tool-row">
+        <div class="tool-num">II</div>
+        <div class="tool-body">
+          <div class="tool-tag">Candidate Intelligence</div>
+          <div class="tool-name">Candidate Persona Builder</div>
+          <div class="tool-desc">Build a profile of who you're actually trying to hire before you write a word. Live persona card updates as you type. Click Build Full Persona for the AI-generated deep profile: motivations, frustrations, where to find them, how to write to them, red flag words that make them disengage, and magnet words that make them stop and read.</div>
+          <div class="tool-chips">
+            <span class="tool-chip">Live persona card</span>
+            <span class="tool-chip">Red flag words</span>
+            <span class="tool-chip">Magnet words</span>
+            <span class="tool-chip">Where to find them</span>
+          </div>
+        </div>
+      </div>
+      <div class="tool-row">
+        <div class="tool-num">III</div>
+        <div class="tool-body">
+          <div class="tool-tag">Quality Audit</div>
+          <div class="tool-name">JD Scorer & Analyser</div>
+          <div class="tool-desc">Paste any existing JD and get an honest score in under 60 seconds. Six dimensions: Clarity, Role Purpose, Candidate Fit, Requirements Quality, Culture Signal, and Inclusion. Each gets a score, colour-coded bar, and specific 2-sentence feedback. Overall grade A–F with 5 specific, actionable improvements. Use it on your existing JD library to find and fix what's not working.</div>
+          <div class="tool-chips">
+            <span class="tool-chip">6 dimensions</span>
+            <span class="tool-chip">A–F grade</span>
+            <span class="tool-chip">Specific feedback</span>
+            <span class="tool-chip">5 improvements</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCORER PREVIEW -->
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">JD Scorer</p>
+    <h2 class="section-title">Six dimensions.<br/><em>Honest scores.</em></h2>
+    <p class="section-sub">Every dimension scored with specific feedback — not generic advice. Paste any JD and know exactly what to fix.</p>
+    <div class="score-preview">
+      <div class="score-dim">
+        <div class="sd-name">Clarity</div>
+        <div class="sd-bar"><div class="sd-bar-fill" style="width:80%;background:var(--green)"></div></div>
+        <div class="sd-desc">Is the role scope and purpose immediately clear from the first paragraph?</div>
+      </div>
+      <div class="score-dim">
+        <div class="sd-name">Role Purpose</div>
+        <div class="sd-bar"><div class="sd-bar-fill" style="width:50%;background:var(--coral)"></div></div>
+        <div class="sd-desc">Does it explain WHY this role exists — not just what it does?</div>
+      </div>
+      <div class="score-dim">
+        <div class="sd-name">Candidate Fit</div>
+        <div class="sd-bar"><div class="sd-bar-fill" style="width:60%;background:#D97706"></div></div>
+        <div class="sd-desc">Does it help candidates self-select in or out accurately?</div>
+      </div>
+      <div class="score-dim">
+        <div class="sd-name">Requirements Quality</div>
+        <div class="sd-bar"><div class="sd-bar-fill" style="width:40%;background:var(--coral)"></div></div>
+        <div class="sd-desc">Are requirements specific, necessary, and free from inflation?</div>
+      </div>
+      <div class="score-dim">
+        <div class="sd-name">Culture Signal</div>
+        <div class="sd-bar"><div class="sd-bar-fill" style="width:70%;background:#D97706"></div></div>
+        <div class="sd-desc">Does it convey what it's genuinely like to work here?</div>
+      </div>
+      <div class="score-dim">
+        <div class="sd-name">Inclusion</div>
+        <div class="sd-bar"><div class="sd-bar-fill" style="width:85%;background:var(--green)"></div></div>
+        <div class="sd-desc">Is it written to attract diverse applicants, free from exclusionary language?</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">What people say</p>
+    <h2 class="section-title">Better JDs.<br/><em>Better hires.</em></h2>
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <p>"I used to spend 2–3 hours on each JD and wonder why half the applicants clearly hadn't read it. This produced a better JD in 8 minutes. The candidate persona was the thing that changed my thinking — I'd never defined who I was writing for before I started writing."</p>
+        <p class="test-attr">Head of People · Series A SaaS</p>
+      </div>
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <p>"The JD scorer is invaluable for client work. I paste in the JD a client sends me, run the score, and have a specific conversation about what's wrong and why it's attracting the wrong candidates. It's changed how I position myself as a recruiter."</p>
+        <p class="test-attr">Independent Recruiter · London</p>
+      </div>
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <p>"We hired two people in Q3 using JDs from this tool. Both were the best hires we've made in two years. The 90-day outcomes section was the thing — it set expectations for the candidate and for us from day one."</p>
+        <p class="test-attr">Founder · 12-person agency</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="pricing">
+  <div class="container">
+    <p class="eyebrow" style="text-align:center">Pricing</p>
+    <h2 class="section-title" style="text-align:center">Three tools.<br/><em>One price.</em></h2>
+    <div class="pricing-card">
+      <div class="pricing-top">
+        <div class="pricing-kicker">Job Description Generator</div>
+        <div class="price">$47</div>
+        <div class="price-sub">One-time · No subscription · Instant download</div>
+      </div>
+      <div class="pricing-body">
+        <ul class="feature-list">
+          <li><span class="check">✦</span>AI JD Generator — full role config, 5 tones, DEI toggle, ATS-ready output</li>
+          <li><span class="check">✦</span>Candidate Persona Builder — live card, AI deep profile, red flag & magnet words</li>
+          <li><span class="check">✦</span>JD Scorer — 6 dimensions, A–F grade, specific feedback, 5 improvements</li>
+          <li><span class="check">✦</span>Copy or export to PDF — one click</li>
+          <li><span class="check">✦</span>Works in any browser — no install, no login</li>
+          <li><span class="check">✦</span>Lifetime access — yours forever</li>
+        </ul>
+        <a href="https://malikreagan.gumroad.com/l/job-description-generator" class="btn-purchase">
+          Get the Job Description Generator — $47
+        </a>
+        <p class="guarantee">7-day money-back guarantee · No questions asked</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">FAQ</p>
+    <h2 class="section-title" style="margin-bottom:0">Questions.</h2>
+    <div class="faq-list" id="faqList"></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Better JDs.<br/><em>Better candidates.</em></h2>
+    <p>Three tools. The complete job description workflow. From candidate persona to scored, ATS-ready JD.</p>
+    <a href="https://malikreagan.gumroad.com/l/job-description-generator" class="btn-primary">Get the JD Generator — $47</a>
+    <p class="cta-note">One-time · 7-day guarantee · Instant download</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">✦ Job Description Generator</div>
+  <div class="footer-links">
+    <a href="#">Privacy</a>
+    <a href="#">Refund Policy</a>
+    <a href="mailto:hello@malikreagan.com">Contact</a>
+  </div>
+</footer>
+
+<script>
+const FAQS = [
+  { q:"How do you write a good job description?", a:"A good job description should be written around the candidate, not just the role. It should clearly explain why the role exists, describe what success looks like in the first 90 days, separate must-have from nice-to-have requirements, convey what it's genuinely like to work at the company, and help candidates self-select in or out accurately. The JD Generator produces JDs structured around all of these principles." },
+  { q:"What should a job description include?", a:"A complete JD should include: a compelling role title and one-sentence tagline, a company overview that conveys culture, a clear explanation of why the role exists and what the first 90 days look like, 6-8 specific responsibilities using action verbs, must-have and nice-to-have requirements listed separately, a genuine benefits section, location and work model, salary range, optional DEI statement, and clear application instructions with timeline." },
+  { q:"How long should a job description be?", a:"Research consistently shows that JDs between 700 and 2,000 words receive the most applications. Below 300 words signals insufficient detail. Above 2,000 causes drop-off, particularly on mobile. The sweet spot is 800-1,200 words — long enough to set clear expectations and filter appropriately, short enough to hold attention. The JD Generator produces JDs in this range by default." },
+  { q:"What makes candidates stop reading a job description?", a:"The most common reasons: an inflated requirements list (10+ bullet points signals a poorly defined role), generic company descriptions, vague responsibilities that don't explain what the person will actually own, missing salary information, exclusionary language, and no sense of what success looks like. The JD Scorer identifies which of these problems your existing JDs have, with specific fixes." },
+  { q:"Can I use this for any type of role?", a:"Yes. The JD Generator covers all seniority levels from junior/entry level through C-suite, all employment types (permanent, contract, part-time, freelance, internship), and all work models (remote, hybrid, on-site). The tone options and cultural framing work across industries. The candidate persona builder adapts to any industry and experience level." },
+  { q:"What format is the tool?", a:"A single HTML file. Open in any browser — no install, no login. Copy the generated JD with one click or export to PDF using your browser's print function. The tool works fully offline except for the AI generation features which require an internet connection." }
+];
+
+const faqList = document.getElementById('faqList');
+FAQS.forEach((f, i) => {
+  const div = document.createElement('div');
+  div.className = 'faq-item';
+  div.innerHTML = `<button class="faq-q" onclick="toggleFaq(${i})">${f.q}<span class="faq-toggle" id="ftog${i}">+</span></button><div class="faq-a" id="fans${i}">${f.a}</div>`;
+  faqList.appendChild(div);
+});
+
+function toggleFaq(i) {
+  const ans = document.getElementById('fans'+i);
+  const tog = document.getElementById('ftog'+i);
+  const open = ans.style.display === 'block';
+  document.querySelectorAll('.faq-a').forEach(a => a.style.display='none');
+  document.querySelectorAll('.faq-toggle').forEach(t => t.textContent='+');
+  if (!open) { ans.style.display='block'; tog.textContent='−'; }
+}
+
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; }
+  });
+}, { threshold: 0.07 });
+document.querySelectorAll('.section').forEach(s => {
+  s.style.opacity='0'; s.style.transform='translateY(18px)';
+  s.style.transition='opacity 0.5s ease, transform 0.5s ease';
+  obs.observe(s);
+});
+</script>
+</body>
+</html>
